@@ -2,4 +2,5 @@
 
 geometry_msgs/Vector3 left
 geometry_msgs/Vector3 right
-uint16 buttons
+bool[] buttons
+bool[] switches
