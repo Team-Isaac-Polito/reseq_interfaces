@@ -3,4 +3,3 @@
 geometry_msgs/Vector3 left
 geometry_msgs/Vector3 right
 bool[] buttons
-bool[] switches
