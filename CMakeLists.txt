@@ -14,6 +14,7 @@ rosidl_generate_interfaces(${PROJECT_NAME}
   "msg/Motors.msg"
   "msg/Remote.msg"
   "msg/EndEffector.msg"
+  "msg/Detection.msg"
   DEPENDENCIES geometry_msgs
 )
 
