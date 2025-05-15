@@ -1,0 +1,10 @@
+int32    detection
+builtin_interfaces/Time time
+string   type
+string   name
+float32  x
+float32  y
+float32  z
+string   robot
+string     mode
+float32  confidence

@@ -9,12 +9,15 @@ endif()
 find_package(geometry_msgs REQUIRED)
 find_package(ament_cmake REQUIRED)
 find_package(rosidl_default_generators REQUIRED)
+find_package(vision_msgs REQUIRED)
 
 rosidl_generate_interfaces(${PROJECT_NAME}
   "msg/Motors.msg"
   "msg/Remote.msg"
   "msg/EndEffector.msg"
-  DEPENDENCIES geometry_msgs
+  "msg/Detection.msg"
+  "srv/BatchDetections2D.srv"
+  DEPENDENCIES geometry_msgs vision_msgs
 )
 
 if(BUILD_TESTING)
