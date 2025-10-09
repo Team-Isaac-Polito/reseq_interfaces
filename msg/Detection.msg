@@ -5,8 +5,8 @@ string name
 string robot
 string mode
 float32 confidence
-uint32 xmin
-uint32 ymin
+int32 xmin
+int32 ymin
 uint32 width
 uint32 height
 float32 depth_center          # meters (depth at bounding-box center)
