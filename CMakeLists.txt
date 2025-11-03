@@ -5,19 +5,36 @@ if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
   add_compile_options(-Wall -Wextra -Wpedantic)
 endif()
 
-# find dependencies
-find_package(geometry_msgs REQUIRED)
 find_package(ament_cmake REQUIRED)
 find_package(rosidl_default_generators REQUIRED)
+
+# dependencies used by messages/services
+find_package(std_msgs REQUIRED)
+find_package(builtin_interfaces REQUIRED)
+find_package(sensor_msgs REQUIRED)
+find_package(geometry_msgs REQUIRED)
 find_package(vision_msgs REQUIRED)
 
-rosidl_generate_interfaces(${PROJECT_NAME}
+# list message files
+set(msg_files
   "msg/Motors.msg"
   "msg/Remote.msg"
   "msg/EndEffector.msg"
   "msg/Detection.msg"
+)
+
+# list service files (added)
+set(srv_files
   "srv/BatchDetections2D.srv"
-  DEPENDENCIES geometry_msgs vision_msgs
+  "srv/SetMode.srv"
+  "srv/GetStatus.srv"
+  "srv/ComputeCoordinate.srv"
+)
+
+rosidl_generate_interfaces(${PROJECT_NAME}
+  ${msg_files}
+  ${srv_files}
+  DEPENDENCIES builtin_interfaces std_msgs sensor_msgs geometry_msgs vision_msgs
 )
 
 if(BUILD_TESTING)
