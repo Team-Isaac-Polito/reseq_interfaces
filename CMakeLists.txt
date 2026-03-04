@@ -29,6 +29,7 @@ set(srv_files
   "srv/SetMode.srv"
   "srv/GetStatus.srv"
   "srv/ComputeCoordinate.srv"
+  "srv/NodeStatus.srv"
 )
 
 rosidl_generate_interfaces(${PROJECT_NAME}
